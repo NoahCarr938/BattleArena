@@ -15,18 +15,21 @@ namespace BattleArena
         private float _attackPower = 1;
         private float _defensePower = 1;
 
-        public string Name {  get { return _name; } }
-        public float MaxHealth {  get { return _maxHealth; } }
-        public float Health
+        public virtual string Name {  get { return _name; } }
+        public virtual float MaxHealth {  get { return _maxHealth; } }
+        public virtual float Health
         {
             get { return _health;  }
             private set { _health = Math.Clamp(value, 0, _maxHealth);  }
         }
 
-        public float AttackPower { get { return _attackPower; } }
+        public virtual float AttackPower { get { return _attackPower; } }
 
-        public float DefensePower { get { return _defensePower; } }
+        public virtual float DefensePower { get { return _defensePower; } }
+        public Character()
+        {
 
+        }
         public Character(string name, float maxHealth, float attackPower, float defensePower)
         {
             _name = name;
@@ -36,14 +39,14 @@ namespace BattleArena
             _defensePower = defensePower;
         }
 
-        public float Attack(Character other)
+        public virtual float Attack(Character other)
         {
             float damage = MathF.Max(0, _attackPower - other.DefensePower);
             other.TakeDamage(damage);
             return damage;
         }
 
-        public void TakeDamage(float damage)
+        public virtual void TakeDamage(float damage)
         {
             Health -= damage;
             if (Health == 0)
@@ -57,12 +60,12 @@ namespace BattleArena
             Health += health;
         }
 
-        private void Die()
+        public virtual void Die()
         {
             Console.WriteLine(Name + " has died!");
         }
 
-        public void PrintStats()
+        public virtual void PrintStats()
         {
             Console.WriteLine("Name:          "          + Name);
             Console.WriteLine("Health:        "        + Health + "/" + MaxHealth);
