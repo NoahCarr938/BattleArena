@@ -8,13 +8,21 @@ namespace BattleArena
 {
     internal class Knight : Enemy
     {
-        public string _name = "Knight";
-        public float _maxHealth = 10;
-        public float _health = 10;
-        public float _attackPower = 1;
-        public float _defensePower = 1;
+        string _name = "Knight";
+        float _maxHealth = 80;
+        float _health = 80;
+        float _attackPower = 15;
+        float _defensePower = 8;
 
-        public Knight(string name, float maxHealth, float attackPower, float defensePower) : base(name, maxHealth, attackPower, defensePower)
+
+        // Knight introduction
+        public override void EnemyIntroduction()
+        {
+            Console.WriteLine("I am a knight of the king, defeat me and you will survive the arena.");
+        }
+        
+
+        public Knight(string name, float maxHealth, float attackPower, float defensePower) : base("knight", 80, 15, 8)
         {
             _name = name;
             _maxHealth = maxHealth;

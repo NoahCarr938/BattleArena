@@ -14,22 +14,21 @@ namespace BattleArena
         private float _health = 10;
         private float _attackPower = 1;
         private float _defensePower = 1;
+        bool playerIsAlive = true;
 
-        public virtual string Name {  get { return _name; } }
-        public virtual float MaxHealth {  get { return _maxHealth; } }
-        public virtual float Health
+        public string Name {  get { return _name; } }
+        public float MaxHealth {  get { return _maxHealth; } }
+        public float Health
         {
             get { return _health;  }
             private set { _health = Math.Clamp(value, 0, _maxHealth);  }
         }
 
-        public virtual float AttackPower { get { return _attackPower; } }
+        public float AttackPower { get { return _attackPower; } }
 
-        public virtual float DefensePower { get { return _defensePower; } }
-        public Character()
-        {
 
-        }
+        public float DefensePower { get { return _defensePower; } }
+
         public Character(string name, float maxHealth, float attackPower, float defensePower)
         {
             _name = name;
@@ -39,14 +38,28 @@ namespace BattleArena
             _defensePower = defensePower;
         }
 
-        public virtual float Attack(Character other)
+        public float Attack(Character other)
         {
             float damage = MathF.Max(0, _attackPower - other.DefensePower);
             other.TakeDamage(damage);
             return damage;
         }
 
-        public virtual void TakeDamage(float damage)
+        public float Block(Character other)
+        {
+            float damage = MathF.Max(0, DefensePower - other._attackPower);
+            TakeDamage(damage);
+            return damage;
+        }
+
+        public float NotAttack(Character other)
+        {
+            float damage = MathF.Max(0, other._attackPower - DefensePower);
+            TakeDamage(damage);
+            return damage;
+        }
+
+        public void TakeDamage(float damage)
         {
             Health -= damage;
             if (Health == 0)
@@ -55,22 +68,22 @@ namespace BattleArena
             }
         }
 
-        public void Heal(float health)
-        {
-            Health += health;
-        }
 
-        public virtual void Die()
+        public void Die()
         {
             Console.WriteLine(Name + " has died!");
         }
 
-        public virtual void PrintStats()
+        public void PrintStats()
         {
             Console.WriteLine("Name:          "          + Name);
             Console.WriteLine("Health:        "        + Health + "/" + MaxHealth);
             Console.WriteLine("Attack Power:  "  + AttackPower);
             Console.WriteLine("Defense Power: " + DefensePower);
+        }
+        public virtual void EnemyIntroduction()
+        {
+
         }
     }
 }

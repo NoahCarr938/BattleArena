@@ -13,14 +13,20 @@ namespace BattleArena
         float _health = 50;
         float _attackPower = 5;
         float _defensePower = 5;
-
-
-        public Warrior(string name, float maxHealth, float attackPower, float defensePower) : base(name, maxHealth, attackPower, defensePower)
+    
+        public Warrior(string name, float maxHealth, float attackPower, float defensePower) : base("Warrior", 55, 8, 5)
         {
             _name = name;
             _maxHealth = maxHealth;
             _attackPower = attackPower;
             _defensePower = defensePower;
         }
+        // Warrior Introduction
+        public override void EnemyIntroduction()
+        {
+            Console.WriteLine("I am a warrior for my country, face me if you dare.");
+        }
+
+
     }
 }

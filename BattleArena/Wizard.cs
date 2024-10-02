@@ -14,7 +14,13 @@ namespace BattleArena
         public float _attackPower = 1;
         public float _defensePower = 1;
 
-        public Wizard(string name, float maxHealth, float attackPower, float defensePower) : base(name, maxHealth, attackPower, defensePower)
+        // Wizard introduction
+        public override void EnemyIntroduction()
+        {
+            Console.WriteLine("I am the head wizard of this city, let us fight already.");
+        }
+
+        public Wizard(string name, float maxHealth, float attackPower, float defensePower) : base("Wizard", 15, 20, 2)
         {
             _name = name;
             _maxHealth = maxHealth;

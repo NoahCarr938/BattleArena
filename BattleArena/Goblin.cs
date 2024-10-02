@@ -14,7 +14,13 @@ namespace BattleArena
         public float _attackPower = 1;
         public float _defensePower = 1;
 
-        public Goblin(string name, float maxHealth, float attackPower, float defensePower) : base(name, maxHealth, attackPower, defensePower)
+        // Goblin Introduction
+        public override void EnemyIntroduction()
+        {
+            Console.WriteLine("I am a goblin, here to steal your life.");
+        }
+
+        public Goblin(string name, float maxHealth, float attackPower, float defensePower) : base("Goblin", 25, 10, 3)
         {
             _name = name;
             _maxHealth = maxHealth;
