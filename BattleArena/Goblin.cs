@@ -15,7 +15,7 @@ namespace BattleArena
         public float _defensePower = 1;
 
         // Goblin Introduction
-        public override void EnemyIntroduction()
+        public override void EnemyIntroduction(Character other)
         {
             Console.WriteLine("I am a goblin, here to steal your life.");
         }

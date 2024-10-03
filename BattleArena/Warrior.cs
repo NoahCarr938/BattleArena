@@ -22,7 +22,7 @@ namespace BattleArena
             _defensePower = defensePower;
         }
         // Warrior Introduction
-        public override void EnemyIntroduction()
+        public override void EnemyIntroduction(Character other)
         {
             Console.WriteLine("I am a warrior for my country, face me if you dare.");
         }

@@ -76,7 +76,7 @@ namespace BattleArena
             player.PrintStats();
             Console.WriteLine();
             Warrior.PrintStats();
-            
+            Warrior.EnemyIntroduction();
 
 
             // Loop until fight 1 is over.
@@ -131,6 +131,7 @@ namespace BattleArena
             player.PrintStats();
             Console.WriteLine();
             Goblin.PrintStats();
+            Goblin.EnemyIntroduction();
 
             while (player.Health > 0 && Goblin.Health > 0)
             {
@@ -180,6 +181,7 @@ namespace BattleArena
             player.PrintStats();
             Console.WriteLine();
             Wizard.PrintStats();
+            Wizard.EnemyIntroduction();
 
             while (player.Health > 0 && Wizard.Health > 0)
             {
@@ -229,6 +231,7 @@ namespace BattleArena
             player.PrintStats();
             Console.WriteLine();
             Knight.PrintStats();
+            Knight.EnemyIntroduction();
 
 
             while (player.Health > 0 && Knight.Health > 0)

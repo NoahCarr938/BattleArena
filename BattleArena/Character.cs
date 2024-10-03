@@ -81,9 +81,11 @@ namespace BattleArena
             Console.WriteLine("Attack Power:  "  + AttackPower);
             Console.WriteLine("Defense Power: " + DefensePower);
         }
-        public virtual void EnemyIntroduction()
+        public virtual void  EnemyIntroduction()
         {
-
+            Console.WriteLine("I am a " + Name + " face me if you dare!");
         }
+
+        
     }
 }

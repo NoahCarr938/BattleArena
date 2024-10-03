@@ -16,7 +16,10 @@ namespace BattleArena
         bool enemyIsAlive = true;
 
         // Abstract function to introduce enemies.
-        public abstract void EnemyIntroduction();
+        public virtual void EnemyIntroduction(Character other)
+        {
+
+        }
 
 
         public Enemy(string name, float maxHealth, float attackPower, float defensePower)

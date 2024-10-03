@@ -16,7 +16,7 @@ namespace BattleArena
 
 
         // Knight introduction
-        public override void EnemyIntroduction()
+        public override void EnemyIntroduction(Character other)
         {
             Console.WriteLine("I am a knight of the king, defeat me and you will survive the arena.");
         }

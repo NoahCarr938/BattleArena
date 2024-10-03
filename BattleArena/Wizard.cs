@@ -15,7 +15,7 @@ namespace BattleArena
         public float _defensePower = 1;
 
         // Wizard introduction
-        public override void EnemyIntroduction()
+        public override void EnemyIntroduction(Character other)
         {
             Console.WriteLine("I am the head wizard of this city, let us fight already.");
         }
