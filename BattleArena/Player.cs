@@ -24,7 +24,7 @@ namespace BattleArena
         // Warrior Introduction
         public override void Introduction()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
     }
 }
