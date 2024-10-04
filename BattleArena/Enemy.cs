@@ -6,28 +6,17 @@ using System.Threading.Tasks;
 
 namespace BattleArena
 {
-    internal abstract class Enemy 
+    internal class Enemy : Character
     {
-        string _name = "";
-        float _maxHealth;
-        float _health;
-        float _attackPower;
-        float _defensePower;
-        bool enemyIsAlive = true;
 
-        // Abstract function to introduce enemies.
-        public virtual void EnemyIntroduction(Character other)
+        public Enemy(string name, float maxHealth, float attackPower, float defensePower) :base(name, maxHealth, attackPower, defensePower)
         {
 
         }
 
-
-        public Enemy(string name, float maxHealth, float attackPower, float defensePower)
+        public override void Introduction()
         {
-            _name = name;
-            _maxHealth = maxHealth;
-            _attackPower = attackPower;
-            _defensePower = defensePower;
+            //throw new NotImplementedException();
         }
     } 
 }

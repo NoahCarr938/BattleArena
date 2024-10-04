@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BattleArena
 {
-    internal class Knight : Enemy
+    internal class Knight : Character
     {
         string _name = "Knight";
         float _maxHealth = 80;
@@ -16,7 +16,7 @@ namespace BattleArena
 
 
         // Knight introduction
-        public override void EnemyIntroduction(Character other)
+        public override void Introduction()
         {
             Console.WriteLine("I am a knight of the king, defeat me and you will survive the arena.");
         }

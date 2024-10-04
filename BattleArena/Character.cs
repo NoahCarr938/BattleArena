@@ -7,7 +7,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace BattleArena
 {
-    internal class Character
+    internal abstract class Character
     {
         private string _name = "Character";
         private float _maxHealth = 10;
@@ -81,11 +81,10 @@ namespace BattleArena
             Console.WriteLine("Attack Power:  "  + AttackPower);
             Console.WriteLine("Defense Power: " + DefensePower);
         }
-        public virtual void  EnemyIntroduction()
-        {
-            Console.WriteLine("I am a " + Name + " face me if you dare!");
-        }
 
-        
+        // Abstract function to introduce enemies.
+        public abstract void Introduction();
+
+
     }
 }

@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace BattleArena
 {
-    internal class Warrior : Character
+    internal class Player : Character
     {
-        string _name = "Warrior";
-        float _maxHealth = 50;
-        float _health = 50;
-        float _attackPower = 5;
+        string _name = "Player";
+        float _maxHealth = 100;
+        float _health = 100;
+        float _attackPower = 10;
         float _defensePower = 5;
-    
-        public Warrior(string name, float maxHealth, float attackPower, float defensePower) : base("Warrior", 55, 8, 5)
+
+        public Player(string name, float maxHealth, float attackPower, float defensePower) : base("Player", 100, 10, 5)
         {
             _name = name;
             _maxHealth = maxHealth;
@@ -24,9 +24,7 @@ namespace BattleArena
         // Warrior Introduction
         public override void Introduction()
         {
-            Console.WriteLine("I am a warrior for my country, face me if you dare.");
+            throw new NotImplementedException();
         }
-
-
     }
 }

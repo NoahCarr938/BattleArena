@@ -11,11 +11,11 @@ namespace BattleArena
 {
     internal class Game
     {
-        Character player = new Character(name: "Player", maxHealth: 100, attackPower: 10, defensePower: 5);
-        Character Warrior = new Character(name: "Warrior", maxHealth: 20, attackPower: 8, defensePower: 3);
-        Character Goblin = new Character(name: "Goblin", maxHealth: 25, attackPower: 10, defensePower: 3);
-        Character Wizard = new Character(name: "Wizard", maxHealth: 15, attackPower: 12, defensePower: 2);
-        Character Knight = new Character(name: "Knight", maxHealth: 40, attackPower: 10, defensePower: 4);
+        Character player = new Enemy(name: "Player", maxHealth: 100, attackPower: 10, defensePower: 5);
+        Enemy Warrior = new Enemy(name: "Warrior", maxHealth: 20, attackPower: 8, defensePower: 3);
+        Enemy Goblin = new Enemy(name: "Goblin", maxHealth: 25, attackPower: 10, defensePower: 3);
+        Enemy Wizard = new Enemy(name: "Wizard", maxHealth: 15, attackPower: 12, defensePower: 2);
+        Enemy Knight = new Enemy(name: "Knight", maxHealth: 40, attackPower: 10, defensePower: 4);
         private bool _gameOver = false;
         int currentArea = 1;
         bool playerIsAlive = true;
@@ -76,7 +76,7 @@ namespace BattleArena
             player.PrintStats();
             Console.WriteLine();
             Warrior.PrintStats();
-            Warrior.EnemyIntroduction();
+            Warrior.Introduction();
 
 
             // Loop until fight 1 is over.
@@ -131,7 +131,7 @@ namespace BattleArena
             player.PrintStats();
             Console.WriteLine();
             Goblin.PrintStats();
-            Goblin.EnemyIntroduction();
+            Goblin.Introduction();
 
             while (player.Health > 0 && Goblin.Health > 0)
             {
@@ -181,7 +181,7 @@ namespace BattleArena
             player.PrintStats();
             Console.WriteLine();
             Wizard.PrintStats();
-            Wizard.EnemyIntroduction();
+            Wizard.Introduction();
 
             while (player.Health > 0 && Wizard.Health > 0)
             {
@@ -231,7 +231,7 @@ namespace BattleArena
             player.PrintStats();
             Console.WriteLine();
             Knight.PrintStats();
-            Knight.EnemyIntroduction();
+            Knight.Introduction();
 
 
             while (player.Health > 0 && Knight.Health > 0)
@@ -289,11 +289,11 @@ namespace BattleArena
 
         private void Start()
         {
-            Character player = new Character(name: "Player", maxHealth: 100, attackPower: 10, defensePower: 5);
-            Character Warrior = new Character(name: "Warrior", maxHealth: 20, attackPower: 8, defensePower: 3);
-            Character Goblin = new Character(name: "Goblin", maxHealth: 25, attackPower: 10, defensePower: 3);
-            Character Wizard = new Character(name: "Wizard", maxHealth: 15, attackPower: 12, defensePower: 2);
-            Character Knight = new Character(name: "Knight", maxHealth: 40, attackPower: 10, defensePower: 4);
+            Enemy player = new Enemy(name: "Player", maxHealth: 100, attackPower: 10, defensePower: 5);
+            Enemy Warrior = new Enemy(name: "Warrior", maxHealth: 20, attackPower: 8, defensePower: 3);
+            Enemy Goblin = new Enemy(name: "Goblin", maxHealth: 25, attackPower: 10, defensePower: 3);
+            Enemy Wizard = new Enemy(name: "Wizard", maxHealth: 15, attackPower: 12, defensePower: 2);
+            Enemy Knight = new Enemy(name: "Knight", maxHealth: 40, attackPower: 10, defensePower: 4);
 
         }
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BattleArena
 {
-    internal class Goblin : Enemy
+    internal class Goblin : Character
     {
         public string _name = "Goblin";
         public float _maxHealth = 10;
@@ -15,7 +15,7 @@ namespace BattleArena
         public float _defensePower = 1;
 
         // Goblin Introduction
-        public override void EnemyIntroduction(Character other)
+        public override void Introduction()
         {
             Console.WriteLine("I am a goblin, here to steal your life.");
         }

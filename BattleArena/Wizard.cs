@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BattleArena
 {
-    internal class Wizard : Enemy
+    internal class Wizard : Character
     {
         public string _name = "Wizard";
         public float _maxHealth = 10;
@@ -15,7 +15,7 @@ namespace BattleArena
         public float _defensePower = 1;
 
         // Wizard introduction
-        public override void EnemyIntroduction(Character other)
+        public override void Introduction()
         {
             Console.WriteLine("I am the head wizard of this city, let us fight already.");
         }
